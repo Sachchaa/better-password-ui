@@ -5,16 +5,15 @@
   "description": "A starter for creating a React component library.",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/gugustinette/react-components-starter#readme",
+  "homepage": "https://github.com/sachchaa/better-password-ui#readme",
   "bugs": {
-    "url": "https://github.com/gugustinette/react-components-starter/issues"
+    "url": "https://github.com/sachchaa/better-password-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gugustinette/react-components-starter.git"
+    "url": "git+https://github.com/sachchaa/better-password-ui.git"
   },
-  "author": "Augustin Mercier <gugustinette@proton.me>",
-  "funding": "https://github.com/sponsors/gugustinette",
+  "author": "Sachin Kanishka",
   "files": [
     "dist"
   ],

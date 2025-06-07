@@ -1,8 +1,4 @@
-# react-components-starter
-
-[![Unit Test](https://github.com/gugustinette/react-components-starter/actions/workflows/unit-test.yml/badge.svg)](https://github.com/gugustinette/react-components-starter/actions/workflows/unit-test.yml)
-
-A starter for creating a React component library.
+# Better Password UI
 
 ## Development
 

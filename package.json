@@ -1,8 +1,8 @@
 {
-  "name": "react-components-starter",
+  "name": "better-password-textfield",
   "version": "0.0.0",
   "packageManager": "pnpm@10.10.0",
-  "description": "A starter for creating a React component library.",
+  "description": "Better Password Textfield",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/sachchaa/better-password-ui#readme",

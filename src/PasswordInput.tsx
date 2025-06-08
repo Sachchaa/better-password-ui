@@ -1,5 +1,6 @@
 import type { ChangeEvent } from "react";
 import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./PasswordInput.css";
 
 interface PasswordInputProps {
@@ -37,7 +38,7 @@ export function PasswordInput({
         className="password-toggle"
         aria-label={showPassword ? "Hide password" : "Show password"}
       >
-        {showPassword ? "🙂" : "🙃"}
+        {showPassword ? <FaEye size={14} /> : <FaEyeSlash size={14} />}
       </button>
     </div>
   );

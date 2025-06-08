@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { FaEye, FaEyeSlash, FaKey } from "react-icons/fa";
-import "./PasswordInput.css";
+import { PasswordGeneratorPopup } from "./PasswordGeneratorPopup";
+import "./styles.css";
 
 interface PasswordInputProps {
   placeholder?: string;
@@ -78,7 +79,13 @@ export function PasswordInput({
       </button>
       {showWindow && (
         <div className="password-popup-window" ref={popupRef}>
-          <p>Password generate will be here</p>
+          <PasswordGeneratorPopup
+            onCancel={() => setShowWindow(false)}
+            onUse={(password) => {
+              setPassword(password);
+              setShowWindow(false);
+            }}
+          />
         </div>
       )}
     </div>

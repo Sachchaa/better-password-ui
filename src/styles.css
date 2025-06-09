@@ -104,14 +104,6 @@
   color: #fff;
 }
 
-.pwgen-refresh {
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #1976d2;
-  cursor: pointer;
-}
-
 .pwgen-password {
   font-size: 14px;
   background: #f5f7fa;
@@ -133,12 +125,6 @@
 
 .pwgen-row label {
   flex: 1;
-  font-size: 14px;
-}
-
-.pwgen-select {
-  border-radius: 8px;
-  padding: 4px 8px;
   font-size: 14px;
 }
 
@@ -195,7 +181,7 @@
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
   cursor: pointer;
-  margin-top: -7px; /* Centers the thumb on the track */
+  margin-top: -7px;
   transition:
     background 0.2s,
     box-shadow 0.2s;

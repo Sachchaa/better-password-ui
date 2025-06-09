@@ -4,6 +4,7 @@ import { PasswordGeneratorPopup } from "./PasswordGeneratorPopup";
 import "./styles.css";
 
 interface PasswordInputProps {
+  value?: string;
   placeholder?: string;
   className?: string;
   onChange?: (value: string) => void;
@@ -12,11 +13,12 @@ interface PasswordInputProps {
 export function PasswordInput({
   placeholder = "Enter password",
   className = "",
+  value,
   onChange,
 }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showWindow, setShowWindow] = useState(false);
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(value || "");
 
   const containerRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);

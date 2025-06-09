@@ -1,23 +1,6 @@
+import { generatePassword } from "@better-password/better-password";
 import React, { useState } from "react";
 import { FaSyncAlt } from "react-icons/fa";
-
-const generatePassword = (
-  length: number,
-  useNumbers: boolean,
-  useSymbols: boolean
-) => {
-  const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
-  const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
-  let chars = letters;
-  if (useNumbers) chars += numbers;
-  if (useSymbols) chars += symbols;
-  let pwd = "";
-  for (let i = 0; i < length; i++) {
-    pwd += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return pwd;
-};
 
 export function PasswordGeneratorPopup({
   onCancel,
@@ -26,13 +9,30 @@ export function PasswordGeneratorPopup({
   onCancel: () => void;
   onUse: (password: string) => void;
 }) {
-  const [length, setLength] = useState(20);
+  const [length, setLength] = useState(16);
   const [useNumbers, setUseNumbers] = useState(true);
+  const [useUppercase, setUseUppercase] = useState(true);
+  const [useLowercase, setUseLowercase] = useState(true);
   const [useSymbols, setUseSymbols] = useState(false);
-  const [password, setPassword] = useState(generatePassword(20, true, false));
+  const [password, setPassword] = useState(
+    generatePassword({
+      length: 16,
+    })
+  );
+
+  const isValid = useLowercase || useUppercase || useNumbers || useSymbols;
 
   const regenerate = () => {
-    setPassword(generatePassword(length, useNumbers, useSymbols));
+    if (!isValid) return;
+    setPassword(
+      generatePassword({
+        length,
+        uppercase: useUppercase,
+        lowercase: useLowercase,
+        symbols: useSymbols,
+        numbers: useNumbers,
+      })
+    );
   };
 
   return (
@@ -52,22 +52,86 @@ export function PasswordGeneratorPopup({
           <FaSyncAlt />
         </button>
       </div>
+      {!isValid && (
+        <div
+          style={{
+            color: "#d32f2f",
+            background: "#fff0f0",
+            borderRadius: "6px",
+            padding: "8px 12px",
+            margin: "10px 0",
+            fontSize: "15px",
+            fontWeight: 500,
+            textAlign: "center",
+            border: "1px solid #ffd6d6",
+          }}
+        >
+          Please select at least one character type.
+        </div>
+      )}
       <div className="pwgen-row">
         <label>Characters</label>
         <input
           type="range"
-          min={6}
+          min={8}
           max={32}
           value={length}
           onChange={(e) => {
             setLength(Number(e.target.value));
             setPassword(
-              generatePassword(Number(e.target.value), useNumbers, useSymbols)
+              generatePassword({
+                length: Number(e.target.value),
+                uppercase: useUppercase,
+                lowercase: useLowercase,
+                symbols: useSymbols,
+                numbers: useNumbers,
+              })
             );
           }}
           className="pwgen-slider"
         />
         <span className="pwgen-length">{length}</span>
+      </div>
+
+      <div className="pwgen-row">
+        <label>Lowercase</label>
+        <input
+          type="checkbox"
+          className="pwgen-checkbox"
+          checked={useLowercase}
+          onChange={(e) => {
+            setUseLowercase(e.target.checked);
+            setPassword(
+              generatePassword({
+                length,
+                uppercase: useUppercase,
+                lowercase: e.target.checked,
+                symbols: useSymbols,
+                numbers: useNumbers,
+              })
+            );
+          }}
+        />
+      </div>
+      <div className="pwgen-row">
+        <label>Uppercase</label>
+        <input
+          type="checkbox"
+          className="pwgen-checkbox"
+          checked={useUppercase}
+          onChange={(e) => {
+            setUseUppercase(e.target.checked);
+            setPassword(
+              generatePassword({
+                length,
+                uppercase: e.target.checked,
+                lowercase: useLowercase,
+                symbols: useSymbols,
+                numbers: useNumbers,
+              })
+            );
+          }}
+        />
       </div>
       <div className="pwgen-row">
         <label>Numbers</label>
@@ -77,7 +141,15 @@ export function PasswordGeneratorPopup({
           checked={useNumbers}
           onChange={(e) => {
             setUseNumbers(e.target.checked);
-            setPassword(generatePassword(length, e.target.checked, useSymbols));
+            setPassword(
+              generatePassword({
+                length,
+                uppercase: useUppercase,
+                lowercase: useLowercase,
+                symbols: useSymbols,
+                numbers: e.target.checked,
+              })
+            );
           }}
         />
       </div>
@@ -89,7 +161,15 @@ export function PasswordGeneratorPopup({
           checked={useSymbols}
           onChange={(e) => {
             setUseSymbols(e.target.checked);
-            setPassword(generatePassword(length, useNumbers, e.target.checked));
+            setPassword(
+              generatePassword({
+                length,
+                uppercase: useUppercase,
+                lowercase: useLowercase,
+                symbols: e.target.checked,
+                numbers: useNumbers,
+              })
+            );
           }}
         />
       </div>

@@ -6,13 +6,11 @@ import "./styles.css";
 interface PasswordInputProps {
   value?: string;
   placeholder?: string;
-  className?: string;
   onChange?: (value: string) => void;
 }
 
 export function PasswordInput({
   placeholder = "Enter password",
-  className = "",
   value,
   onChange,
 }: PasswordInputProps) {
@@ -51,7 +49,7 @@ export function PasswordInput({
 
   return (
     <div
-      className={`password-input-container ${className}`}
+      className="password-input-container"
       style={{ position: "relative" }}
       ref={containerRef}
     >

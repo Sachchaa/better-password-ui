@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { FaEye, FaEyeSlash, FaKey } from "react-icons/fa";
 import { PasswordGeneratorPopup } from "./PasswordGeneratorPopup";
-import "./styles.css";
+import "./index.css";
 
 interface PasswordInputProps {
   value?: string;

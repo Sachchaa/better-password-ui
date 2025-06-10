@@ -1,2 +1,2 @@
+import "./index.css";
 export { PasswordInput } from "./PasswordInput";
-import "./styles.css";

@@ -17,7 +17,7 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     globals: true,
-    setupFiles: ["./tests/setup.ts", ".storybook/vitest.setup.ts"],
+    setupFiles: [".storybook/vitest.setup.ts"],
     browser: {
       enabled: true,
       headless: true,

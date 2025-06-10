@@ -27,6 +27,23 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "react",
+    "password",
+    "password input",
+    "password field",
+    "password generator",
+    "show password",
+    "hide password",
+    "react component",
+    "typescript",
+    "ui",
+    "form",
+    "input",
+    "secure",
+    "accessibility",
+    "storybook"
+  ],
   "scripts": {
     "build": "tsdown",
     "dev": "tsdown --watch",

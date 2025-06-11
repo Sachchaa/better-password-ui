@@ -33,6 +33,7 @@ const Row = styled.div`
 
 const Label = styled.label`
   flex: 1;
+  text-align: left;
   font-size: 14px;
 `;
 

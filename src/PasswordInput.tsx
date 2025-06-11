@@ -11,7 +11,7 @@ const Container = styled.div`
   position: relative;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  background-color: white;
+  background-color: #ffffff;
   transition: all 0.2s ease;
   padding: 12px;
 `;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const Input = styled.input`
   flex: 1 1 0%;
   font-size: 14px;
-  background-color: white;
+  background-color: #ffffff;
   transition: all 0.2s ease;
   outline: none;
   border: none;
@@ -61,7 +61,7 @@ const PopupWindow = styled.div`
   left: 0;
   z-index: 1000;
   min-width: 340px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   padding: 0;
@@ -141,6 +141,7 @@ export function PasswordInput({
             onCancel={() => setShowWindow(false)}
             onUse={(password) => {
               setPassword(password);
+              onChange?.(password);
               setShowWindow(false);
             }}
           />

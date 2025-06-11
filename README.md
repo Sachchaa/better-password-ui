@@ -4,15 +4,16 @@
 
 ---
 
-## 🌟 What Makes It Great?
+## 🌟 Why Use Better Password Textfield?
 
-- **All-in-one**: Combines password input, show/hide toggle, and a secure password generator in a single, easy-to-use component.
-- **Plug & Play**: Drop it into any React project—no complex setup required.
-- **Accessible by Design**: Keyboard navigation, screen reader support, and ARIA labels out of the box.
-- **Customizable**: Style it with your own classes or extend its functionality as needed.
-- **TypeScript First**: Enjoy full type safety and autocompletion in your editor.
-- **Security Focused**: Encourages strong password practices with a built-in generator.
-- **Open Source**: Actively maintained and open to contributions.
+- Combines password input, show/hide toggle, and a secure password generator in a single, easy-to-use component.
+- Plug & Play: Drop it into any React project—no complex setup required.
+- Accessible by Design: Keyboard navigation, screen reader support, and ARIA labels out of the box.
+- Customizable: Style it with your own classes or extend its functionality as needed.
+- TypeScript First: Enjoy full type safety and autocompletion in your editor.
+- Security Focused: Encourages strong password practices with a built-in generator.
+- Open Source: Actively maintained and open to contributions.
+- **Features:** Show/Hide Password, Built-in Password Generator, Accessibility, TypeScript support.
 
 ---
 

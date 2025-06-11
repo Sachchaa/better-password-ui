@@ -1,6 +1,6 @@
 {
   "name": "better-password-textfield",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "packageManager": "pnpm@10.10.0",
   "description": "Better Password Textfield",
   "type": "module",

@@ -23,15 +23,6 @@
 
 ---
 
-## ✨ Features
-
-- **Show/Hide Password**: Toggle password visibility with a single click.
-- **Password Generator**: Built-in secure password generator popup.
-- **Accessibility**: Keyboard and screen reader friendly.
-- **TypeScript**: Fully typed for safety and autocompletion.
-
----
-
 ## 🚀 Installation
 
 ```bash

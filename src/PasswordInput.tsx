@@ -72,12 +72,14 @@ interface PasswordInputProps {
   value?: string;
   placeholder?: string;
   onChange?: (value: string) => void;
+  showGenerator?: boolean;
 }
 
 export function PasswordInput({
   placeholder = "Enter password",
   value,
   onChange,
+  showGenerator = true,
 }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showWindow, setShowWindow] = useState(false);
@@ -127,14 +129,18 @@ export function PasswordInput({
       >
         {showPassword ? <FaEye size={14} /> : <FaEyeSlash size={14} />}
       </ToggleButton>
-      <Divider />
-      <ToggleButton
-        type="button"
-        aria-label="Extra action"
-        onClick={() => setShowWindow((v) => !v)}
-      >
-        <FaKey size={14} />
-      </ToggleButton>
+      {showGenerator && (
+        <>
+          <Divider />
+          <ToggleButton
+            type="button"
+            aria-label="Generate password"
+            onClick={() => setShowWindow((v) => !v)}
+          >
+            <FaKey size={14} />
+          </ToggleButton>
+        </>
+      )}
       {showWindow && (
         <PopupWindow ref={popupRef}>
           <PasswordGeneratorPopup

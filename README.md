@@ -37,10 +37,12 @@ yarn add better-password-textfield
 
 ## 🛠 Usage
 
+### Login form (No Password Generator)
+
 ```tsx
 import { PasswordInput } from "better-password-textfield";
 
-export default function MyForm() {
+export default function LoginForm() {
   const [password, setPassword] = React.useState("");
 
   return (
@@ -48,6 +50,26 @@ export default function MyForm() {
       value={password}
       onChange={setPassword}
       placeholder="Enter your password"
+      showGenerator={false}
+    />
+  );
+}
+```
+
+### Sign up Form (With Password Generator)
+
+```tsx
+import { PasswordInput } from "better-password-textfield";
+
+export default function SignupForm() {
+  const [password, setPassword] = React.useState("");
+
+  return (
+    <PasswordInput
+      value={password}
+      onChange={setPassword}
+      placeholder="Create a password"
+      showGenerator={true}
     />
   );
 }
@@ -57,11 +79,12 @@ export default function MyForm() {
 
 ## ⚙️ Props
 
-| Prop          | Type                      | Default            | Description                        |
-| ------------- | ------------------------- | ------------------ | ---------------------------------- |
-| `value`       | `string`                  | `""`               | The current password value         |
-| `onChange`    | `(value: string) => void` | `undefined`        | Callback when the password changes |
-| `placeholder` | `string`                  | `"Enter password"` | Input placeholder text             |
+| Prop            | Type                      | Default            | Description                        |
+| --------------- | ------------------------- | ------------------ | ---------------------------------- |
+| `value`         | `string`                  | `""`               | The current password value         |
+| `onChange`      | `(value: string) => void` | `undefined`        | Callback when the password changes |
+| `placeholder`   | `string`                  | `"Enter password"` | Input placeholder text             |
+| `showGenerator` | `boolean`                 | `true`             | Show/hide the password generator   |
 
 ---
 

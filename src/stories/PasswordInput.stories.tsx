@@ -20,3 +20,19 @@ export const Default: Story = {
     onChange: fn(),
   },
 };
+
+export const LoginForm: Story = {
+  args: {
+    placeholder: "Enter your password",
+    showGenerator: false,
+    onChange: fn(),
+  },
+};
+
+export const SignupForm: Story = {
+  args: {
+    placeholder: "Create a password",
+    showGenerator: true,
+    onChange: fn(),
+  },
+};
